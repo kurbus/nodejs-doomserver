@@ -1,5 +1,5 @@
 //havent tried this, idk if it works?
-const hostname = "127.0.0.1";
+const hostname=require('os').hostname();
 const port = "666";
 const dgram = require('node:dgram');
 //start server
