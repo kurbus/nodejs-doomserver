@@ -9,7 +9,7 @@ arr=Array(50)
 server.bind(port, hostname);
 server.on('message', function(msg, rinfo) {
   //append to array's first blank index
-  arr[arr.findlLast]=msg;
+  arr[arr.findLast]=msg;
   console.log("we got a message")
   sleep(350); //wait
   //send back first msg in list to all listening on that port
