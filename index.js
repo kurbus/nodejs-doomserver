@@ -4,11 +4,15 @@ const port = "666";
 const dgram = require('node:dgram');
 //start server
 const server = dgram.createSocket('udp4');
-
-//broadcast on
-server.setBroadcast(true);
+arr=Array(50)
+//start listening 
 server.bind(port, hostname);
-//shoot out a recieved message to all listening on that port (at any given time, no buffer)
 server.on('message', function(msg, rinfo) {
-  server.send(msg, 0, msg.length, port, hostname, function(err, bytes) {
+  //append to array's first blank index
+  arr[arr.findlLast]=msg;
+  //send back first msg in list to all listening on that port
+  server.send(arr[0], 0, arr[0].length, port, hostname, function(err, bytes) {
+    console.log("sent back: " + msg);
+  });
+ arr.splice(0,1);
 });
