@@ -20,3 +20,4 @@ server.on('message', function(msg, rinfo) {
 });
 
 //no while loop since every client sends a packet every second, even if no action is performed 
+//this is so short because node does most of the stuff on its own
