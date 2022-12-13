@@ -105,3 +105,4 @@ dist
 # Replit garbage
 .replit
 replix.nix
+.breakpoints
