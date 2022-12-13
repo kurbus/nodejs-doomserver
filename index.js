@@ -17,9 +17,10 @@ server.on('message', function(msg, rinfo) {
     console.log("succesfully sent out a packet \n");
   });
 });
-if (arr[0]==null) {
+if (arr[50]==undefined && arr.find(element=>element!==undefined)!==undefined) {
   //send out message since original relay failed
-  server.send(arr[arr.find(element=>element!==undefined)], 0, arr[arr.find(element=>element!==undefined)].length, port, hostname, function(err, bytes) //look for first sendable packet and send it {
+  //this sends out the first sendable packet it finds in queue arr
+  server.send(arr[arr.find(element=>element!==undefined)], 0, arr[arr.find(element=>element!==undefined)].length, port, hostname, function(err, bytes) {
     console.log("no msg recieved, relaying packet to hopefully wake up nodes;");
   });
   arr.splice(0,1);
