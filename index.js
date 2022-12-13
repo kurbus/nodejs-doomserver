@@ -16,8 +16,13 @@ server.on('message', function(msg, rinfo) {
   server.send(arr[0], 0, arr[0].length, port, hostname, function(err, bytes) {
     console.log("succesfully sent out a packet \n");
   });
- arr.splice(0,1);
 });
-
+if (arr[0]==null) {
+  //send out message since original relay failed
+  server.send(arr[arr.find(element=>element!==undefined)], 0, arr[arr.find(element=>element!==undefined)].length, port, hostname, function(err, bytes) //look for first sendable packet and send it {
+    console.log("no msg recieved, relaying packet to hopefully wake up nodes;");
+  });
+  arr.splice(0,1);
+}
 //no while loop since every client sends a packet every second, even if no action is performed 
 //this is so short because node does most of the stuff on its own

@@ -102,6 +102,6 @@ dist
 
 # TernJS port file
 .tern-port
- # Replit garbage
+# Replit garbage
 .replit
 replix.nix
