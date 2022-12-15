@@ -27,6 +27,7 @@ if (arr[50] == undefined && arr.find(element => element !== undefined) !== undef
   //bump up, keep going
   arr.splice(0, 1);
 }
+sleep(350);
 }
 
 
