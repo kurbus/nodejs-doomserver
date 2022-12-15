@@ -6,6 +6,7 @@ arr =Array(50)
 arrl=Array(25)
 //start listening 
 server.bind(stuff.port, stuff.hostname);
+while (True) {
 server.on('message', function(msg, rinfo) {
   //append to array's first blank index
   arr[arr.findLast] = msg;
@@ -23,8 +24,9 @@ if (arr[50] == undefined && arr.find(element => element !== undefined) !== undef
   server.send(arr[arr.find(element => element !== undefined)], 0, arr[arr.find(element => element !== undefined)].length, stuff.port, stuff.hostname, function(err, bytes) {
     console.log("no msg recieved, relaying packet to hopefully wake up nodes;");
   });
+  //bump up, keep going
   arr.splice(0, 1);
 }
-
+}
 
 
