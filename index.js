@@ -22,12 +22,13 @@ if (arr[50] == undefined && arr.find(element => element !== undefined) !== undef
   //send out message since original relay failed
   //this sends out the first sendable packet it finds in queue arr
   server.send(arr[arr.find(element => element !== undefined)], 0, arr[arr.find(element => element !== undefined)].length, stuff.port, stuff.hostname, function(err, bytes) {
-    console.log("no msg recieved, relaying packet to hopefully wake up nodes;");
+    console.log("packet dropped, relaying last available packet");
   });
   //bump up, keep going
   arr.splice(0, 1);
 }
 sleep(350);
+ 
 }
 
 
