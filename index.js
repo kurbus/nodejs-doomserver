@@ -28,7 +28,11 @@ if (arr[50] == undefined && arr.find(element => element !== undefined) !== undef
   arr.splice(0, 1);
 }
 sleep(350);
- 
+//send if no message was recieved, should never be called anyways
+ server.send(arr[0], 0, arr[0].length, stuff.port, stuff.hostname, function(err, bytes) {
+    console.log("sent another message");
+   arr.splice(0,1);
+  });
 }
 
 
