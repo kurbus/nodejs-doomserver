@@ -4,7 +4,6 @@ this is the doom server software that i tried to port to node.js. think this onl
 i have no idea how nodejs works <br>
 i have no idea about the doom network protocol</br>
 ## please star
-helps to feed my family
-
+Guys i was joking stop starring this
 
 
