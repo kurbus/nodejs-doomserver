@@ -2,8 +2,7 @@
 var stuff=require('./stuff.json')
 const dgram = require('node:dgram');
 const server = dgram.createSocket('udp4');
-arr =Array(50)
-arrl=Array(25)
+arr =Array(60)
 //start listening 
 server.bind(stuff.port, stuff.hostname);
 while (True) {
